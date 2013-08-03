@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
     <head>
         <title>Laz Alpleri 2013 - Keşler Grubu / Mala Bağlayanlar</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
                 <a class="navbar-brand" href="/">Laz Alpleri 2013</a>
             </div>
         </div>
-        <div class="container">
+        <div class="container" ng-controller="LazAlpleriController">
             <div class="row">
                 <div class="col-lg-12">
                     <div id="map-container">
@@ -26,10 +26,9 @@
             <div class="row">
                 <div class="col-lg-4">
                     <ul class="list-group">
-                        <a href="#" class="list-group-item active"><span class="glyphicon glyphicon-pushpin"></span> Hede</a>
-                        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-share-alt"></span> Futup</a>
-                        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-share-alt"></span> Fitip</a>
-                        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-share-alt"></span> Hodo</a>
+                        <a href="#" class="list-group-item" ng-repeat="action in actions">
+                            <span class="glyphicon" ng-class="{'glyphicon-pushpin': action.type == 'Stay', 'glyphicon-arrow-right': action.type == 'Travel'}"></span> {{action.name}}
+                        </a>
                     </ul>
                 </div>
                 <div class="col-lg-8">
@@ -65,6 +64,8 @@
         <script src="js/jquery-2.0.3.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/angular.min.js"></script>
+        <script src="js/paths.js"></script>
+        <script src="js/actions.js"></script>
         <script src="js/scripts.js"></script>
     </body>
 </html>

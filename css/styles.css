@@ -17,6 +17,7 @@ body * {
 
 #map-container {
     height: 400px;
+    margin: 5px 0px 20px 0px;
 }
 
 .list-group-item {
@@ -26,5 +27,5 @@ body * {
 
 .thumbnail {
     text-align: center;
-    margin: 4px auto;
+    margin-bottom: 6px;
 }
