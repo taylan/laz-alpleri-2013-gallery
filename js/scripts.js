@@ -1,8 +1,28 @@
+
+angular.module('laz-alpleri', []).
+    config(function($routeProvider, $locationProvider) {
+        $routeProvider.when('/go/:action', {
+        //templateUrl: 'chapter.html',
+        controller: LazAlpleriController
+        })
+        .otherwise({redirectTo: '/'});
+
+        $locationProvider.html5Mode(true);
+    });
+
 var mappe;
-function LazAlpleriController($scope){
+function LazAlpleriController($scope, $route, $routeParams){
     $scope.actions = actions;
     $scope.markers = [];
     $scope.paths = [];
+
+    $scope.$on('$routeChangeSuccess', function(event, current) {
+       var action = current.params.action;
+       if (!action)
+            return;
+        else
+            console.log(action);
+     });
 
     initializeMapPoints = function() {
         angular.forEach($scope.actions, function(action){
@@ -46,10 +66,7 @@ function LazAlpleriController($scope){
                 zoomControlOptions: {
                     style: google.maps.ZoomControlStyle.SMALL
                 },
-                mapTypeControl: true,
-                mapTypeControlOptions: {
-                    style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-                },
+                mapTypeControl: false,
                 overviewMapControl: true
             });
 
