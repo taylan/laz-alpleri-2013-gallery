@@ -18,3 +18,13 @@ body * {
 #map-container {
     height: 400px;
 }
+
+.list-group-item {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.thumbnail {
+    text-align: center;
+    margin: 4px auto;
+}
