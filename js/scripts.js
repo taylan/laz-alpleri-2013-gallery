@@ -2,7 +2,6 @@
 angular.module('laz-alpleri', []).
 config(function($routeProvider, $locationProvider) {
     $routeProvider.when('/go/:action', {
-    //templateUrl: 'chapter.html',
     controller: LazAlpleriController
     })
     .otherwise({redirectTo: '/'});
@@ -12,7 +11,7 @@ config(function($routeProvider, $locationProvider) {
 
 var mappe;
 var pathss;
-function LazAlpleriController($scope, $route, $routeParams){
+function LazAlpleriController($scope, $route, $routeParams, $location){
     $scope.actions = actions;
     $scope.markers = [];
     $scope.paths = [];
@@ -26,13 +25,9 @@ function LazAlpleriController($scope, $route, $routeParams){
             width: '90%',
             height: '90%'
         });
-
-        console.log("colorbox gogo");
     };
 
     $scope.$watch('galleryPhotos', function(oldGallery, newGallery) {
-        console.log('gallery changed');
-
         setTimeout(function(){
             bindGalleryColorbox();
         }, 200);
@@ -49,17 +44,26 @@ function LazAlpleriController($scope, $route, $routeParams){
                     key: action.key
                 });
 
+                google.maps.event.addListener(marker, 'click', function() {
+                    $("#action_" + marker.key).click();
+                });
+
                 $scope.markers.push(marker);
             }
             else {
                 var path = new google.maps.Polyline({
                     map: $scope.map,
                     path: action.path,
-                    strokeColor: "#FF0000",
+                    strokeColor: "#80B1FE",
                     strokeOpacity: 0.7,
-                    strokeWeight: 2,
+                    strokeWeight: 3,
+                    geodesic: true,
                     key: action.key
                   });
+
+                google.maps.event.addListener(path, 'click', function() {
+                    $("#action_" + path.key).click();
+                });
 
                 $scope.paths.push(path);
             }
@@ -123,8 +127,7 @@ function LazAlpleriController($scope, $route, $routeParams){
         $scope.galleryPhotos = jQuery.grep(photos, function(p) {
             var pd = new Date(p.dt);
             return jQuery.grep(action.filterDates, function(fd){
-                var xx = pd > new Date(fd.start) && pd < new Date(fd.end);
-                return xx;
+                return pd > new Date(fd.start) && pd < new Date(fd.end);
             }).length > 0;
         });
     };
@@ -138,7 +141,7 @@ function LazAlpleriController($scope, $route, $routeParams){
         var action = findInArray($scope.actions, function(a){
             return a.key == actionKey;
         });
-        if(action == null){
+        if(action == null) {
             resetGalleryPhotos();
             resetMap();
             return;
@@ -161,7 +164,7 @@ function LazAlpleriController($scope, $route, $routeParams){
 
     $scope.$on('$routeChangeSuccess', function(event, current) {
        var action = current.params.action;
-       if (!action){
+       if (!action) {
             resetGalleryPhotos();
             resetMap();
             return;

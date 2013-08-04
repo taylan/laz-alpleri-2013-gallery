@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <ul class="list-group">
-                        <a href="/go/{{action.key}}" class="list-group-item navigation-link" ng-repeat="action in actions" title='{{getNavigationLinkTooltip(action)}}'>
+                        <a href="/go/{{action.key}}" id="action_{{action.key}}" class="list-group-item navigation-link" ng-repeat="action in actions" title='{{getNavigationLinkTooltip(action)}}'>
                             <span class="glyphicon" ng-class="{'glyphicon-home': action.type == 'Stay', 'glyphicon-arrow-right': action.type == 'Travel'}"></span> {{action.name}}
                         </a>
                     </ul>
