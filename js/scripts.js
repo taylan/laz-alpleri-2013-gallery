@@ -35,13 +35,14 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
 
     initializeMapPoints = function() {
         angular.forEach($scope.actions, function(action){
-            if(action.type == "Stay") {
+            if(action.type == "Stay" || action.type == "Eat" || action.type == "Swim") {
                 var marker = new google.maps.Marker({
                     map: $scope.map,
                     position: new google.maps.LatLng(action.location.lat, action.location.lon),
                     animation: google.maps.Animation.DROP,
                     title: action.name,
-                    key: action.key
+                    key: action.key,
+                    icon: "/images/" + action.type.toLowerCase() + ".png"
                 });
 
                 google.maps.event.addListener(marker, 'click', function() {
@@ -147,7 +148,7 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
             return;
         }
 
-        if(action.type == "Stay") {
+        if(action.type == "Stay" || action.type == "Eat" || action.type == "Swim") {
             $scope.map.setCenter(new google.maps.LatLng(action.location.lat, action.location.lon));
             $scope.map.setZoom(17);
         }
