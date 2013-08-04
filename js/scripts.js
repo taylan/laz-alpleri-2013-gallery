@@ -189,8 +189,17 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
     };
 
     $scope.isActionSelected = function() {
-        console.log($scope.currentAction);
         return typeof $scope.currentAction != 'undefined';
+    };
+
+    $scope.getProgress = function() {
+        var action = findInArray($scope.actions, function(a){
+            return a.key == $scope.currentAction;
+        });
+        if(action == null)
+            return 0;
+
+        return ((action.step / $scope.actions.length) * 100) + "%";
     };
 }
 
