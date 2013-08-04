@@ -1,7 +1,7 @@
 var actions = [
     {
-        key: "oberj-1",
-        name: "Oberj",
+        key: "ayder-oberj",
+        name: "Ayder & Oberj",
         type: "Stay",
         displayDates: ["2013-07-20"],
         filterDates: [ { start: "2013-07-20T00:00", end: "2013-07-21T11:00" } ],

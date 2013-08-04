@@ -12,6 +12,7 @@ config(function($routeProvider, $locationProvider) {
 var mappe;
 var pathss;
 function LazAlpleriController($scope, $route, $routeParams, $location){
+    $scope.currentAction = "";
     $scope.actions = actions;
     $scope.markers = [];
     $scope.paths = [];
@@ -165,6 +166,7 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
 
     $scope.$on('$routeChangeSuccess', function(event, current) {
        var action = current.params.action;
+       $scope.currentAction = action;
        if (!action) {
             resetGalleryPhotos();
             resetMap();
@@ -180,6 +182,10 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
             return dt.getDate() + "." + (dt.getMonth() + 1) + "." + dt.getFullYear();
         });
         return aa.name + "<br />" + dates.join("<br />");
+    };
+
+    $scope.isActiveLink = function(a) {
+        return $scope.currentAction == a;
     };
 }
 
