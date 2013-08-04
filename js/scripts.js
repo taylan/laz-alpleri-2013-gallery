@@ -22,7 +22,7 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
         $.colorbox.remove();
         $("a.thumbnail").colorbox({
             rel: 'gallery',
-            opacity: 0.7,
+            opacity: 0.85,
             width: '90%',
             height: '90%'
         });
@@ -82,7 +82,7 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
                 disableDoubleClickZoom: true,
                 scrollwheel: true,
                 keyboardShortcuts: false,
-                minZoom: 5,
+                minZoom: 8,
                 zoom: 11,
                 mapTypeId: google.maps.MapTypeId.HYBRID,
                 zoomControl: true,
