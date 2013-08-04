@@ -187,6 +187,11 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
     $scope.isActiveLink = function(a) {
         return $scope.currentAction == a;
     };
+
+    $scope.isActionSelected = function() {
+        console.log($scope.currentAction);
+        return typeof $scope.currentAction != 'undefined';
+    };
 }
 
 $(document).ready(function(){

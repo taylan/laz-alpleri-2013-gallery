@@ -34,3 +34,7 @@ div[class="tooltip-inner"] {
     max-width: 200px;
     width: 200px;
 }
+
+.jumbotron h1 {
+    margin-bottom: 20px;
+}

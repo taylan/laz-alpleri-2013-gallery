@@ -32,7 +32,15 @@
                         </a>
                     </ul>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-9" ng-hide="isActionSelected()">
+                    <div class="jumbotron">
+                        <h1>Merhaba Keşler!</h1>
+                        <p>21-28 Temmuz 2013 tarihleri arasında yaptığımız <strong>Laz Alpleri</strong> gezisinde çektiğimiz yüzlerce fotoğrafı rahatça görebilmemiz için böyle bir galeri uydurdum. Umarım beğenirsiniz.</p>
+                        <p>Fotoğrafları görmek için soldaki navigasyondan, ya da yukarıdaki haritadan seçim yapabilirsiniz. <small>(Hem yollara hem de konaklama noktalarına tıklayabilirsiniz.)</small></p>
+                        <p>Şu an için sadece benim ve <a href="https://www.facebook.com/nazliavanoglu" target="_blank">Nazlı</a>'nın çektiği fotoğraflar var. Fotoğraflara katkı yapmak için bana <a class="btn btn-primary" href="mailto:taylanaydinli@gmail.com">e-mail</a> veya <a class="btn btn-primary" target="_blank" href="https://www.facebook.com/taylanaydinli">facebook</a> üzerinden ulaşıyorsunuz. Fotoğraflarınızı bana iletiyorsunuz. Ben gerekli taklaları atıp fotoğrafları galeriye ekliyorum.</p>
+                    </div>
+                </div>
+                <div class="col-lg-9" ng-show="isActionSelected()">
                     <div class="col-lg-3" ng-repeat="photo in galleryPhotos">
                         <a href="http://i.imgur.com/{{photo.ih}}.jpg" class="thumbnail"><img src="http://i.imgur.com/{{photo.ih}}b.jpg"></a>
                     </div>
