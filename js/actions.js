@@ -10,7 +10,7 @@ var actions = [
     {
         key: "osmanli-alabalik",
         name: "Osmanlı Alabalık",
-        type: "Stay",
+        type: "Eat",
         displayDates: ["2013-07-21"],
         filterDates: [ { start: "2013-07-21T11:00", end: "2013-07-21T14:00" } ],
         location: { lat: 41.122675, lon: 41.039939 }
@@ -42,7 +42,7 @@ var actions = [
     {
         key: "komati-yuruyusu-yayla-evi",
         name: "Komati Yürüyüşü Yayla Evi",
-        type: "Stay",
+        type: "Eat",
         displayDates: ["2013-07-21"],
         filterDates: [ { start: "2013-07-22T13:30", end: "2013-07-22T15:30" } ],
         location: { lat: 41.001142, lon: 41.252736 }
@@ -74,7 +74,7 @@ var actions = [
     {
         key: "adali-gol-pansiyon",
         name: "Adalı Göl Pansiyon",
-        type: "Stay",
+        type: "Eat",
         displayDates: ["2013-07-24"],
         filterDates: [ { start: "2013-07-24T12:15", end: "2013-07-24T15:00" } ],
         location: { lat: 41.003611, lon: 41.192222 }
@@ -90,7 +90,7 @@ var actions = [
     {
         key: "buyuk-gol",
         name: "Büyük Göl",
-        type: "Stay",
+        type: "Swim",
         displayDates: ["2013-07-26"],
         filterDates: [ { start: "2013-07-26T11:00", end: "2013-07-26T11:45" } ],
         location: { lat: 40.969861, lon: 41.222703 }
@@ -114,7 +114,7 @@ var actions = [
     {
         key: "avusor",
         name: "Avusor",
-        type: "Stay",
+        type: "Eat",
         displayDates: ["2013-07-27"],
         filterDates: [ { start: "2013-07-27T12:30", end: "2013-07-27T14:00" } ],
         location: { lat: 40.950892, lon: 41.189094 }
