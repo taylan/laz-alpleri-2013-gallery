@@ -4,7 +4,7 @@ var actions = [
         name: "Oberj",
         type: "Stay",
         displayDates: ["2013-07-20"],
-        dates: "2013-07-20",
+        filterDates: [ { start: "2013-07-20T00:00", end: "2013-07-21T11:00" } ],
         location: { lat: 40.95205, lon: 41.10938 }
     },
     {
@@ -12,7 +12,7 @@ var actions = [
         name: "Osmanlı Alabalık",
         type: "Stay",
         displayDates: ["2013-07-20"],
-        dates: "2013-07-20",
+        filterDates: [ { start: "2013-07-21T11:00", end: "2013-07-21T14:00" } ],
         location: { lat: 41.122675, lon: 41.039939 }
     },
     {
@@ -20,7 +20,7 @@ var actions = [
         name: "Çamlıhemşin -> Komati",
         type: "Travel",
         displayDates: ["2013-07-21"],
-        dates: "2013-07-20",
+        filterDates: [ { start: "2013-07-21T14:00", end: "2013-07-21T18:30" } ],
         path: paths["camlihemsin-komati"]
     },
     {
@@ -28,7 +28,7 @@ var actions = [
         name: "Komati",
         type: "Stay",
         displayDates: ["2013-07-21", "2013-07-22"],
-        dates: "2013-07-20",
+        filterDates: [ { start: "2013-07-21T18:30", end: "2013-07-22T09:00" } ],
         location: { lat: 41.030008, lon: 41.214519 }
     },
     {
@@ -36,7 +36,7 @@ var actions = [
         name: "Komati Yürüyüşü",
         type: "Travel",
         displayDates: ["2013-07-21"],
-        dates: "2013-07-20",
+        filterDates: [ { start: "2013-07-22T09:00", end: "2013-07-22T13:30" }, { start: "2013-07-22T15:30", end: "2013-07-22T18:30" } ],
         path: paths["komati-yuruyus"]
     },
     {
@@ -44,23 +44,23 @@ var actions = [
         name: "Komati Yürüyüşü Yayla Evi",
         type: "Stay",
         displayDates: ["2013-07-21"],
-        dates: "2013-07-20",
+        filterDates: [ { start: "2013-07-22T13:30", end: "2013-07-22T15:30" } ],
         location: { lat: 41.001142, lon: 41.252736 }
     },
     {
         key: "komati-didingola",
         name: "Komati -> Didingola",
         type: "Travel",
-        displayDates: ["2013-07-22"],
-        dates: "2013-07-20",
+        displayDates: ["2013-07-23"],
+        filterDates: [ { start: "2013-07-23T09:00", end: "2013-07-23T14:00" } ],
         path: paths["komati-didingola"]
     },
     {
         key: "didingola",
         name: "Didingola",
         type: "Stay",
-        displayDates: ["2013-07-22", "2013-07-23", "2013-07-24"],
-        dates: "2013-07-20",
+        displayDates: ["2013-07-23", "2013-07-24", "2013-07-25"],
+        filterDates: [ { start: "2013-07-23T14:00", end: "2013-07-24T09:00" }, { start: "2013-07-24T17:30", end: "2013-07-26T09:15" } ],
         location: { lat: 40.990778, lon: 41.220475 }
     },
     {
@@ -68,7 +68,7 @@ var actions = [
         name: "Didingola Adalı Göl Yürüyüşü",
         type: "Travel",
         displayDates: ["2013-07-24"],
-        dates: "2013-07-20",
+        filterDates: [ { start: "2013-07-24T09:00", end: "2013-07-24T12:15" }, { start: "2013-07-24T15:00", end: "2013-07-24T17:30" } ],
         path: paths["didingola-adali-gol"]
     },
     {
@@ -76,7 +76,7 @@ var actions = [
         name: "Adalı Göl Pansiyon",
         type: "Stay",
         displayDates: ["2013-07-24"],
-        dates: "2013-07-20",
+        filterDates: [ { start: "2013-07-24T12:15", end: "2013-07-24T15:00" } ],
         location: { lat: 41.003611, lon: 41.192222 }
     },
     {
@@ -84,7 +84,7 @@ var actions = [
         name: "Didingola -> Dadala",
         type: "Travel",
         displayDates: ["2013-07-26"],
-        dates: "2013-07-20",
+        filterDates: [ { start: "2013-07-26T09:15", end: "2013-07-26T11:15" }, { start: "2013-07-26T11:45", end: "2013-07-26T14:00" } ],
         path: paths["didingola-dadala"]
     },
     {
@@ -92,7 +92,7 @@ var actions = [
         name: "Büyük Göl",
         type: "Stay",
         displayDates: ["2013-07-26"],
-        dates: "2013-07-20",
+        filterDates: [ { start: "2013-07-26T11:15", end: "2013-07-26T11:45" } ],
         location: { lat: 40.969861, lon: 41.222703 }
     },
     {
@@ -100,7 +100,7 @@ var actions = [
         name: "Dadala",
         type: "Stay",
         displayDates: ["2013-07-26"],
-        dates: "2013-07-20",
+        filterDates: [ { start: "2013-07-26T14:00", end: "2013-07-27T09:30" } ],
         location: { lat: 40.962933, lon: 41.224633 }
     },
     {
@@ -108,7 +108,7 @@ var actions = [
         name: "Dadala -> Avusor",
         type: "Travel",
         displayDates: ["2013-07-27"],
-        dates: "2013-07-20",
+        filterDates: [ { start: "2013-07-27T09:30", end: "2013-07-27T12:30" } ],
         path: paths["dadala-avusor"]
     },
     {
@@ -116,7 +116,7 @@ var actions = [
         name: "Avusor",
         type: "Stay",
         displayDates: ["2013-07-27"],
-        dates: "2013-07-20",
+        filterDates: [ { start: "2013-07-27T12:30", end: "2013-07-27T14:00" } ],
         location: { lat: 40.950892, lon: 41.189094 }
     },
     {
@@ -124,7 +124,7 @@ var actions = [
         name: "Oberj",
         type: "Stay",
         displayDates: ["2013-07-28"],
-        dates: "2013-07-20",
+        filterDates: [ { start: "2013-07-27T18:00", end: "2013-07-28T14:00" } ],
         location: { lat: 40.95205, lon: 41.10938 }
     },
 ]

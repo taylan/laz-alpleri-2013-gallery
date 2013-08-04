@@ -16,6 +16,7 @@ function LazAlpleriController($scope, $route, $routeParams){
     $scope.actions = actions;
     $scope.markers = [];
     $scope.paths = [];
+    $scope.galleryPhotos = [];
 
     initializeMapPoints = function() {
         angular.forEach($scope.actions, function(action){
@@ -70,14 +71,24 @@ function LazAlpleriController($scope, $route, $routeParams){
         mappe = $scope.map;
     };
 
+    resetMap = function(){
+        $scope.map.setCenter(new google.maps.LatLng(41.047891, 41.149128));
+        $scope.map.setZoom(11);
+    };
+
+    findInArray = function(array, predicate) {
+        var results = jQuery.grep(array, predicate);
+        if(results.length != 1)
+            return null;
+        return results[0];
+    };
+
     getPolylineBounds = function(polylineKey) {
-        var polylines = jQuery.grep($scope.paths, function(p){
+        var polyline = findInArray($scope.paths, function(p){
             return p.key == polylineKey;
         });
-        if(polylines.length != 1)
+        if(polyline == null)
             return;
-
-        var polyline = polylines[0];
 
         var bounds = new google.maps.LatLngBounds();
         var points = polyline.getPath().getArray();
@@ -88,14 +99,30 @@ function LazAlpleriController($scope, $route, $routeParams){
         return bounds;
     };
 
+    setGalleryPhotos = function(action) {
+        $scope.galleryPhotos = jQuery.grep(photos, function(p) {
+            var pd = new Date(p.dt);
+            return jQuery.grep(action.filterDates, function(fd){
+                var xx = pd > new Date(fd.start) && pd < new Date(fd.end);
+                return xx;
+            }).length > 0;
+        });
+    };
+
+    resetGalleryPhotos = function() {
+        $scope.galleryPhotos = [];
+    };
+
     goToAction = function(actionKey) {
-        var acts = jQuery.grep(actions, function(a){
+        var action = findInArray($scope.actions, function(a){
             return a.key == actionKey;
         });
-        if(acts.length != 1)
+        if(action == null){
+            resetGalleryPhotos();
+            resetMap();
             return;
+        }
 
-        var action = acts[0];
         if(action.type == "Stay") {
             $scope.map.setCenter(new google.maps.LatLng(action.location.lat, action.location.lon));
             $scope.map.setZoom(17);
@@ -104,6 +131,8 @@ function LazAlpleriController($scope, $route, $routeParams){
             var bounds = getPolylineBounds(actionKey);
             $scope.map.fitBounds(bounds);
         }
+
+        setGalleryPhotos(action);
     };
 
     initializeMap();
@@ -111,8 +140,11 @@ function LazAlpleriController($scope, $route, $routeParams){
 
     $scope.$on('$routeChangeSuccess', function(event, current) {
        var action = current.params.action;
-       if (!action)
+       if (!action){
+            resetGalleryPhotos();
+            resetMap();
             return;
+       }
         else
             goToAction(action);
      });
@@ -127,17 +159,8 @@ function LazAlpleriController($scope, $route, $routeParams){
 }
 
 $(document).ready(function(){
-$(".navigation-link").tooltip({
+    $(".navigation-link").tooltip({
         placement: 'right',
         html: true
     });
-
-  //   var gun1Path = new google.maps.Polyline({
-  //   path: gun1Points,
-  //   strokeColor: "#FF0000",
-  //   strokeOpacity: 1.0,
-  //   strokeWeight: 2
-  // });
-
-  // gun1Path.setMap(map);
 });

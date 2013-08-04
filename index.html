@@ -32,7 +32,10 @@
                     </ul>
                 </div>
                 <div class="col-lg-8">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3" ng-repeat="photo in galleryPhotos">
+                        <a href="http://i.imgur.com/{{photo.ih}}.jpg" target="_blank" class="thumbnail"><img src="http://i.imgur.com/{{photo.ih}}b.jpg"></a>
+                    </div>
+<!--                     <div class="col-lg-3">
                         <a href="#" class="thumbnail"><img src="http://i.imgur.com/ANEnmZqb.jpg"></a>
                     </div>
                     <div class="col-lg-3">
@@ -55,7 +58,7 @@
                     </div>
                     <div class="col-lg-3">
                         <a href="#" class="thumbnail"><img src="http://i.imgur.com/ANEnmZqb.jpg"></a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -65,6 +68,7 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/angular.min.js"></script>
         <script src="js/paths.js"></script>
+        <script src="js/photos.js"></script>
         <script src="js/actions.js"></script>
         <script src="js/scripts.js"></script>
     </body>
