@@ -106,7 +106,7 @@ var actions = [
     {
         key: "dadala-avusor",
         name: "Dadala -> Avusor",
-        type: "Eat",
+        type: "Travel",
         displayDates: ["2013-07-27"],
         filterDates: [ { start: "2013-07-27T09:30", end: "2013-07-27T12:30" } ],
         path: paths["dadala-avusor"]
