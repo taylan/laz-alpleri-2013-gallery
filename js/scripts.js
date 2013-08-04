@@ -139,6 +139,22 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
         $.colorbox.remove();
     };
 
+    resetPathColors = function() {
+        jQuery.each($scope.paths, function(index, path){
+            path.setOptions({strokeColor: "#80B1FE"});
+        });
+    };
+
+    setActivePathColor = function(actionKey) {
+        var polyline = findInArray($scope.paths, function(p){
+            return p.key == actionKey;
+        });
+        if(polyline == null)
+            return;
+
+        polyline.setOptions({strokeColor: "#FD0865"});
+    };
+
     goToAction = function(actionKey) {
         var action = findInArray($scope.actions, function(a){
             return a.key == actionKey;
@@ -149,12 +165,15 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
             return;
         }
 
+        resetPathColors();
+
         if(action.type == "Stay" || action.type == "Eat" || action.type == "Swim") {
             $scope.map.setCenter(new google.maps.LatLng(action.location.lat, action.location.lon));
             $scope.map.setZoom(17);
         }
         else {
             var bounds = getPolylineBounds(actionKey);
+            setActivePathColor(actionKey);
             $scope.map.fitBounds(bounds);
         }
 
