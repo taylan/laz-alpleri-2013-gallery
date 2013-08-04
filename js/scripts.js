@@ -18,6 +18,26 @@ function LazAlpleriController($scope, $route, $routeParams){
     $scope.paths = [];
     $scope.galleryPhotos = [];
 
+    bindGalleryColorbox = function() {
+        $.colorbox.remove();
+        $("a.thumbnail").colorbox({
+            rel: 'gallery',
+            opacity: 0.7,
+            width: '90%',
+            height: '90%'
+        });
+
+        console.log("colorbox gogo");
+    };
+
+    $scope.$watch('galleryPhotos', function(oldGallery, newGallery) {
+        console.log('gallery changed');
+
+        setTimeout(function(){
+            bindGalleryColorbox();
+        }, 200);
+    });
+
     initializeMapPoints = function() {
         angular.forEach($scope.actions, function(action){
             if(action.type == "Stay") {
@@ -111,6 +131,7 @@ function LazAlpleriController($scope, $route, $routeParams){
 
     resetGalleryPhotos = function() {
         $scope.galleryPhotos = [];
+        $.colorbox.remove();
     };
 
     goToAction = function(actionKey) {

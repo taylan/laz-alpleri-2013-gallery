@@ -6,6 +6,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="css/bootstrap-glyphicons.css" rel="stylesheet" media="screen">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css' media='screen'>
+        <link href="css/colorbox.css" rel="stylesheet" media="screen">
         <link href="css/styles.css" rel="stylesheet" media="screen">
         <meta name="robots" content="noindex, nofollow">
     </head>
@@ -24,47 +25,24 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <ul class="list-group">
                         <a href="/go/{{action.key}}" class="list-group-item navigation-link" ng-repeat="action in actions" title='{{getNavigationLinkTooltip(action)}}'>
                             <span class="glyphicon" ng-class="{'glyphicon-home': action.type == 'Stay', 'glyphicon-arrow-right': action.type == 'Travel'}"></span> {{action.name}}
                         </a>
                     </ul>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-9">
                     <div class="col-lg-3" ng-repeat="photo in galleryPhotos">
-                        <a href="http://i.imgur.com/{{photo.ih}}.jpg" target="_blank" class="thumbnail"><img src="http://i.imgur.com/{{photo.ih}}b.jpg"></a>
+                        <a href="http://i.imgur.com/{{photo.ih}}.jpg" class="thumbnail"><img src="http://i.imgur.com/{{photo.ih}}b.jpg"></a>
                     </div>
-<!--                     <div class="col-lg-3">
-                        <a href="#" class="thumbnail"><img src="http://i.imgur.com/ANEnmZqb.jpg"></a>
-                    </div>
-                    <div class="col-lg-3">
-                        <a href="#" class="thumbnail"><img src="http://i.imgur.com/ANEnmZqb.jpg"></a>
-                    </div>
-                    <div class="col-lg-3">
-                        <a href="#" class="thumbnail"><img src="http://i.imgur.com/hM8RFOMb.jpg"></a>
-                    </div>
-                    <div class="col-lg-3">
-                        <a href="#" class="thumbnail"><img src="http://i.imgur.com/ANEnmZqb.jpg"></a>
-                    </div>
-                    <div class="col-lg-3">
-                        <a href="#" class="thumbnail"><img src="http://i.imgur.com/ANEnmZqb.jpg"></a>
-                    </div>
-                    <div class="col-lg-3">
-                        <a href="#" class="thumbnail"><img src="http://i.imgur.com/hM8RFOMb.jpg"></a>
-                    </div>
-                    <div class="col-lg-3">
-                        <a href="#" class="thumbnail"><img src="http://i.imgur.com/ANEnmZqb.jpg"></a>
-                    </div>
-                    <div class="col-lg-3">
-                        <a href="#" class="thumbnail"><img src="http://i.imgur.com/ANEnmZqb.jpg"></a>
-                    </div> -->
                 </div>
             </div>
         </div>
 
         <script src="http://maps.google.com/maps/api/js?sensor=false&language=tr&region=TR" type="text/javascript"></script>
         <script src="js/jquery-2.0.3.min.js"></script>
+        <script src="js/jquery.colorbox-min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/angular.min.js"></script>
         <script src="js/paths.js"></script>

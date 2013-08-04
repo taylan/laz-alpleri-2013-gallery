@@ -11,7 +11,7 @@ var actions = [
         key: "osmanli-alabalik",
         name: "Osmanlı Alabalık",
         type: "Stay",
-        displayDates: ["2013-07-20"],
+        displayDates: ["2013-07-21"],
         filterDates: [ { start: "2013-07-21T11:00", end: "2013-07-21T14:00" } ],
         location: { lat: 41.122675, lon: 41.039939 }
     },
@@ -60,7 +60,7 @@ var actions = [
         name: "Didingola",
         type: "Stay",
         displayDates: ["2013-07-23", "2013-07-24", "2013-07-25"],
-        filterDates: [ { start: "2013-07-23T14:00", end: "2013-07-24T09:00" }, { start: "2013-07-24T17:30", end: "2013-07-26T09:15" } ],
+        filterDates: [ { start: "2013-07-23T14:00", end: "2013-07-24T09:00" }, { start: "2013-07-24T17:00", end: "2013-07-26T09:15" } ],
         location: { lat: 40.990778, lon: 41.220475 }
     },
     {
@@ -68,7 +68,7 @@ var actions = [
         name: "Didingola Adalı Göl Yürüyüşü",
         type: "Travel",
         displayDates: ["2013-07-24"],
-        filterDates: [ { start: "2013-07-24T09:00", end: "2013-07-24T12:15" }, { start: "2013-07-24T15:00", end: "2013-07-24T17:30" } ],
+        filterDates: [ { start: "2013-07-24T09:00", end: "2013-07-24T12:15" }, { start: "2013-07-24T15:00", end: "2013-07-24T17:00" } ],
         path: paths["didingola-adali-gol"]
     },
     {
@@ -84,7 +84,7 @@ var actions = [
         name: "Didingola -> Dadala",
         type: "Travel",
         displayDates: ["2013-07-26"],
-        filterDates: [ { start: "2013-07-26T09:15", end: "2013-07-26T11:15" }, { start: "2013-07-26T11:45", end: "2013-07-26T14:00" } ],
+        filterDates: [ { start: "2013-07-26T09:15", end: "2013-07-26T11:00" }, { start: "2013-07-26T11:45", end: "2013-07-26T14:00" } ],
         path: paths["didingola-dadala"]
     },
     {
@@ -92,7 +92,7 @@ var actions = [
         name: "Büyük Göl",
         type: "Stay",
         displayDates: ["2013-07-26"],
-        filterDates: [ { start: "2013-07-26T11:15", end: "2013-07-26T11:45" } ],
+        filterDates: [ { start: "2013-07-26T11:00", end: "2013-07-26T11:45" } ],
         location: { lat: 40.969861, lon: 41.222703 }
     },
     {
