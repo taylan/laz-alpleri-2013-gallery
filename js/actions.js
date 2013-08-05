@@ -32,7 +32,7 @@ var actions = [
         type: "Stay",
         step: 4,
         displayDates: ["2013-07-21", "2013-07-22"],
-        filterDates: [ { start: "2013-07-21T18:30", end: "2013-07-22T09:00" } ],
+        filterDates: [ { start: "2013-07-21T18:30", end: "2013-07-22T09:00" }, { start: "2013-07-22T18:30", end: "2013-07-23T09:00" } ],
         location: { lat: 41.030008, lon: 41.214519 }
     },
     {
