@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="col-lg-9" ng-show="isActionSelected()">
-                    <div class="col-lg-3" ng-repeat="photo in galleryPhotos">
+                    <div class="col-lg-3" ng-repeat="photo in galleryPhotos | orderBy:orderPhotosByDate">
                         <a href="http://i.imgur.com/{{photo.ih}}.jpg" class="thumbnail"><img src="http://i.imgur.com/{{photo.ih}}b.jpg"></a>
                     </div>
                 </div>

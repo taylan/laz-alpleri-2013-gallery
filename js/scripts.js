@@ -162,6 +162,7 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
         if(action == null) {
             resetGalleryPhotos();
             resetMap();
+            resetPathColors();
             return;
         }
 
@@ -189,6 +190,7 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
        if (!action) {
             resetGalleryPhotos();
             resetMap();
+            resetPathColors();
             return;
        }
         else
@@ -219,6 +221,10 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
             return 0;
 
         return ((action.step / $scope.actions.length) * 100) + "%";
+    };
+
+    $scope.orderPhotosByDate = function(photo) {
+        return new Date(photo.dt);
     };
 }
 
