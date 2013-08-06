@@ -228,7 +228,7 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
     };
 
     $scope.getPhotoAuthor = function(photo) {
-        return "<a href='" + people[photo.au].website + "'>" + people[photo.au].name + "</a>";
+        return "<a target='_blank' href='" + people[photo.au].website + "'>" + people[photo.au].name + "</a>";
     };
 }
 
