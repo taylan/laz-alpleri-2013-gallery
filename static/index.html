@@ -52,7 +52,10 @@
                 </div>
                 <div class="col-lg-9" ng-show="isActionSelected()">
                     <div class="col-lg-3" ng-repeat="photo in galleryPhotos | orderBy:orderPhotosByDate">
-                        <a href="http://i.imgur.com/{{photo.ih}}.jpg" class="thumbnail"><img src="http://i.imgur.com/{{photo.ih}}b.jpg"></a>
+                        <a href="http://i.imgur.com/{{photo.ih}}.jpg" class="thumbnail">
+                            <img src="http://i.imgur.com/{{photo.ih}}b.jpg">
+                            <span class="author-overlay text-center" title='{{getPhotoAuthor(photo)}}'>{{photo.au}}</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -60,7 +63,7 @@
         <div id="footer">
             <div class="container">
                 <div class="container">
-                    <p class="text-muted text-center credit"><small>Bu site <a href="mailto:taylanaydinli@gmail.com">Taylan Aydınlı</a>'nın yarattığı bir zamazingodur. Nasıl oluyor da oluyor diyenler <a href="https://github.com/vape/laz-alpleri-2013-gallery" target="_blank">bu linke</a> tıklayarak nasıl olduğunu görebilirler.</small></p>
+                    <p class="text-muted text-center credit"><small><small>Bu site bir <a href="mailto:taylanaydinli@gmail.com">Taylan Aydınlı</a> prodüksiyonudur. "Nasıl oluyor da oluyor" diyenler <a href="https://github.com/vape/laz-alpleri-2013-gallery" target="_blank">bu linke</a> tıklayarak nasıl olduğunu görebilirler.</small></small></p>
                 </div>
             </div>
         </div>

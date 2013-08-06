@@ -30,6 +30,17 @@ body * {
     margin-bottom: 6px;
 }
 
+.thumbnail .author-overlay {
+    position: absolute;
+    right: 16px;
+    bottom: 7px;
+    width: 20px;
+    height: 17px;
+    background: #fff;
+    font-size: 8pt;
+    border-radius: 3px;
+}
+
 .nav-tooltip {
     border-radius: 5px;
     padding: 0px;
@@ -38,7 +49,7 @@ body * {
 .qtip-bootstrap .qtip-content {
     padding: 5px 9px !important;
     text-align: center;
-    font-size: 12px;
+    font-size: 10pt;
 }
 
 .jumbotron h1 {

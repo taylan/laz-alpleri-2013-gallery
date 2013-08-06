@@ -226,6 +226,10 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
     $scope.orderPhotosByDate = function(photo) {
         return new Date(photo.dt);
     };
+
+    $scope.getPhotoAuthor = function(photo) {
+        return "<a href='" + people[photo.au].website + "'>" + people[photo.au].name + "</a>";
+    };
 }
 
 $(document).ready(function(){
@@ -239,7 +243,26 @@ $(document).ready(function(){
         },
         style: {
             classes: 'qtip-bootstrap nav-tooltip',
-            width: 180
+            width: 200
         }
+    });
+
+    $(document).on("mouseover", ".author-overlay", function(event){
+        $(this).qtip({
+            show: {
+                event: event.type,
+                ready: true
+            },
+            style: {
+                classes: 'qtip-bootstrap nav-tooltip'
+            },
+            hide: {
+                fixed: true,
+                delay: 300
+            }
+        }, event);
+    }).each(function(i) {
+        $.attr(this, 'oldtitle', $.attr(this, 'title'));
+        this.removeAttribute('title');
     });
 });

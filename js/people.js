@@ -1,4 +1,4 @@
-{
+var people = {
     "TA": {
         name: "Taylan Aydınlı",
         website: "https://www.facebook.com/taylanaydinli"
