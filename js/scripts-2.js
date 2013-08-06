@@ -262,7 +262,7 @@ $(document).ready(function(){
             }
         }, event);
     }).each(function(i) {
-        $.attr(this, 'oldtitle', $.attr(this, 'title'));
-        this.removeAttribute('title');
+        $(this).attr("oldtitle", $(this).attr("title"));
+        $(this).removeAttr('title');
     });
 });
