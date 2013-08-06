@@ -30,9 +30,15 @@ body * {
     margin-bottom: 6px;
 }
 
-div[class="tooltip-inner"] {
-    max-width: 200px;
-    width: 200px;
+.nav-tooltip {
+    border-radius: 5px;
+    padding: 0px;
+}
+
+.qtip-bootstrap .qtip-content {
+    padding: 5px 9px !important;
+    text-align: center;
+    font-size: 12px;
 }
 
 .jumbotron h1 {

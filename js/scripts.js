@@ -229,8 +229,17 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
 }
 
 $(document).ready(function(){
-    $(".navigation-link").tooltip({
-        placement: 'right',
-        html: true
+    $(".navigation-link").qtip({
+        position: {
+            my: 'left center',
+            at: 'right center',
+            adjust: {
+                x: 10
+            }
+        },
+        style: {
+            classes: 'qtip-bootstrap nav-tooltip',
+            width: 180
+        }
     });
 });

@@ -14,7 +14,7 @@ var actions = [
         type: "Eat",
         step: 2,
         displayDates: ["2013-07-21"],
-        filterDates: [ { start: "2013-07-21T11:00", end: "2013-07-21T14:00" } ],
+        filterDates: [ { start: "2013-07-21T11:00", end: "2013-07-21T15:00" } ],
         location: { lat: 41.122675, lon: 41.039939 }
     },
     {
@@ -23,7 +23,7 @@ var actions = [
         type: "Travel",
         step: 3,
         displayDates: ["2013-07-21"],
-        filterDates: [ { start: "2013-07-21T14:00", end: "2013-07-21T18:30" } ],
+        filterDates: [ { start: "2013-07-21T15:00", end: "2013-07-21T18:30" } ],
         path: paths["camlihemsin-komati"]
     },
     {
