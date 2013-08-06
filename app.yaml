@@ -20,6 +20,9 @@ handlers:
 - url: /css
   static_dir: css
 
+- url: /components
+  static_dir: components
+
 - url: /js
   static_dir: js
 

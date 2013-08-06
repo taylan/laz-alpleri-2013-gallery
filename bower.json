@@ -1,0 +1,15 @@
+{
+  "name": "laz-alpleri-2013-gallery",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "angular": "~1.0.7"
+  }
+}
