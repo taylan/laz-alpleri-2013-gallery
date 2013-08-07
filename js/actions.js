@@ -151,5 +151,5 @@ var actions = [
         displayDates: ["2013-07-28"],
         filterDates: [ { start: "2013-07-27T18:00", end: "2013-07-28T14:00" } ],
         location: { lat: 40.95205, lon: 41.10938 }
-    },
+    }
 ]
