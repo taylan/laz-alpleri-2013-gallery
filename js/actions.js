@@ -135,10 +135,19 @@ var actions = [
         location: { lat: 40.950892, lon: 41.189094 }
     },
     {
+        key: "avusor-oberj",
+        name: "Avusor -> Oberj",
+        type: "Travel",
+        step: 16,
+        displayDates: ["2013-07-27"],
+        filterDates: [ { start: "2013-07-27T14:00", end: "2013-07-27T18:00" } ],
+        path: paths["avusor-oberj"]
+    },
+    {
         key: "oberj-2",
         name: "Oberj",
         type: "Stay",
-        step: 16,
+        step: 17,
         displayDates: ["2013-07-28"],
         filterDates: [ { start: "2013-07-27T18:00", end: "2013-07-28T14:00" } ],
         location: { lat: 40.95205, lon: 41.10938 }

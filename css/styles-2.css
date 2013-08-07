@@ -13,6 +13,7 @@ body * {
 
 .navbar-brand {
     padding: 10px 10px;
+    max-width: 100%;
 }
 
 #map-container {
@@ -54,6 +55,11 @@ body * {
 
 .jumbotron h1 {
     margin-bottom: 20px;
+}
+
+.jumbotron {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 #footer {

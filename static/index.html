@@ -15,7 +15,7 @@
     <body>
         <div class="navbar navbar-inverse">
             <div class="container">
-                <a class="navbar-brand" href="/">Laz Alpleri 2013</a>
+                <a class="navbar-brand" href="/">Laz Alpleri 2013 | <small class="text-muted">21.07.2013 - 28.07.2013</small></a>
             </div>
         </div>
         <div class="container" ng-controller="LazAlpleriController">
@@ -45,8 +45,15 @@
                     <div class="jumbotron">
                         <h1>Merhaba Keşler!</h1>
                         <p class="lead">21-28 Temmuz 2013 tarihleri arasında yaptığımız <strong>Laz Alpleri</strong> gezisinde çektiğimiz yüzlerce fotoğrafı rahatça görebilmemiz için böyle bir galeri uydurdum. Umarım beğenirsiniz.</p>
+
+                    </div>
+                    <div class="panel">
                         <p>Fotoğrafları görmek için soldaki navigasyondan, ya da yukarıdaki haritadan seçim yapabilirsiniz. <small>(Hem yollara hem de konaklama noktalarına tıklayabilirsiniz.)</small></p>
-                        <p>Şu an için sadece benim ve <a href="https://www.facebook.com/nazliavanoglu" target="_blank">Nazlı</a>'nın çektiği fotoğraflar var. Fotoğraflara katkı yapmak için bana <a class="btn btn-primary" href="mailto:taylanaydinli@gmail.com">e-mail</a> veya <a class="btn btn-primary" target="_blank" href="https://www.facebook.com/taylanaydinli">facebook</a> üzerinden ulaşıyorsunuz. Fotoğraflarınızı bana iletiyorsunuz. Ben gerekli taklaları atıp fotoğrafları galeriye ekliyorum.</p>
+                        <p>Fotoğraflara katkı yapanlar:</p>
+                        <p ng-repeat="person in people">
+                            <a target="_blank" href="{{person.website}}">{{person.name}}</a>
+                        </p>
+                        <p>Çektiğiniz fotoğrafların bu galeride yer alması için bana <a class="btn btn-primary" href="mailto:taylanaydinli@gmail.com">e-mail</a> veya <a class="btn btn-primary" target="_blank" href="https://www.facebook.com/taylanaydinli">facebook</a> üzerinden ulaşabilirsiniz.</p>
                         <p><small>Bu galeriyi <a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a> veya <a href="http://www.mozilla.org/firefox/" target="_blank">Firefox</a> ile görüntülemenizi rica ediyorum. Diğer browser'larla sorun yaşayabilirsiniz.</small></p>
                     </div>
                 </div>

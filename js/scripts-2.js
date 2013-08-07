@@ -17,6 +17,7 @@ function LazAlpleriController($scope, $route, $routeParams, $location){
     $scope.markers = [];
     $scope.paths = [];
     $scope.galleryPhotos = [];
+    $scope.people = people;
 
     bindGalleryColorbox = function() {
         $.colorbox.remove();
